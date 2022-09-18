@@ -3,11 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport`" content="width=device-width, initial-scale=1.0">
     <title>My Money Calculated</title>
+      <!-- CSS LINK -->
+      <link rel="stylesheet" href="style.css">
+
+      <!-- tailwindcss link  -->
+      <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>hello</h1>
-    
+
+
+<body class="border-2 bg-blue-150">
+    <header class="text-xl text-center mt-16 font-bold text-purple-700   <i
+    class=" fa-solid fa-sack-dollar"></i>Money Calculated</header>
+    <main>
+        <section class="flex">
+            <div class="image">
+                <img src="image/money1.jpg" alt="">
+            </div>
+
+            <div class="income bg-slate-100">
+                <p class="text-center font-bold mt-5">income</p>
+                <section>
+
+                    <div class="">
+                        <h3>income</h3>
+                    </div>
+
+                    <div>
+                        <input id="Income" class="border border-gray-400 rounded w-3/4 mb-4 px-2" type="1000">
+
+                    </div>
+                </section>
+
+                <p class="text-center font-bold">Expenses</p>
+
+                <h3>Food</h3><input id="food-cost" class="border border-gray-400 rounded w-3/4 mb-4 px-2" type="1000">
+
+                <h3>Rent</h3><input id="Rent-cost" class="border border-gray-400 rounded w-3/4 mb-4 px-2" type="1000">
+
+                <h3>Clothes</h3><input id="clothes-cost" class="border border-gray-400 rounded w-3/4 mb-4 px-2"
+                    type="1000">
+                <br>
+
+                <button id="Total-cost-button"
+                    class=" items-center bg-blue-600 px-4 rounded py-2 text-white font-medium text-center place-content-center ">calcularte</button>
+
+                <div class="center">
+                    <h2 class="text-center font-bold ml-1">Total Expenses:</h2>
+                    <p id="total-expenses" class="text-center">
+                        1000
+                    </p>
+                </div>
+
+                <p class="text-center font-bold">Balance : 4000</p>
+                <p class="text-center font-bold">saving Amount: 2000</p>
+                <p class="text-center font-bold">remaining Balance: 2500</p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!-- javascipt link -->
+    <script src="js/money.js"></script>
+
 </body>
+
 </html>
