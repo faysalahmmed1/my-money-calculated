@@ -1,70 +1,46 @@
+document.getElementById('Total-cost-button').addEventListener('click', function () {
 
-
-document.getElementById('Total-cost-button').addEventListener('click', function(){
-
-
-
+    //Food Cost
     const FoodCost = document.getElementById('food-cost');
     const InputFoodCost = FoodCost.value;
-    const NewInputFoodCost = parseFloat(InputFoodCost);
-    
-    const TotalFoodCostText = document.getElementById('total-expenses');
-    const previousFoodCost = TotalFoodCostText.innerText;
-    const previousFoodCostAmount = parseFloat(previousFoodCost);
-    const NewTotalFoodCost = previousFoodCostAmount + NewInputFoodCost;
-    TotalFoodCostText.innerText = NewTotalFoodCost;
+    const NewInputFoodCost = parseFloat(InputFoodCost) || 0;
 
-
-    
     // Rent Cost 
+    const RentCost = document.getElementById('rent-cost');
+    const InputRentCost = RentCost.value;
+    const NewInputRentCost = parseFloat(InputRentCost) || 0;
 
-     const RentCost = document.getElementById('rent-cost');
-     const InputRentCost = RentCost.value;
-     const NewInputRentCost = parseFloat(InputRentCost);
-
-     const TotalRentCostText = document.getElementById('total-expenses');
-     const previousRentCost = TotalRentCostText.innerText;
-     const previousRentCostAmount = parseFloat(previousRentCost);
-     const NewTotalRentCost = previousRentCostAmount + NewInputRentCost;
-     TotalRentCostText.innerText = NewTotalRentCost;
-     
-
-
-    //  Clothes Cost
-    
+    // Clothes Cost
     const ClothesCost = document.getElementById('clothes-cost');
     const InputClothesCost = ClothesCost.value;
-    const NewInputClothesCost = parseFloat(InputClothesCost);
+    const NewInputClothesCost = parseFloat(InputClothesCost) || 0;
 
+    //Total Expenses
+    const NewTotalClothesCost = NewInputFoodCost + NewInputRentCost + NewInputClothesCost;
     const TotalClothesCost = document.getElementById('total-expenses');
-    const previousClothesCost = TotalClothesCost.innerText;
-    const previousClothesCostAmount = parseFloat(previousClothesCost);
-    const NewTotalClothesCost = previousClothesCostAmount + NewInputClothesCost;
     TotalClothesCost.innerText = NewTotalClothesCost;
 
-
-
     // Income
-
     const Income = document.getElementById('Income');
     const InputIncome = Income.value;
-    const NewInputIncome = parseFloat(InputIncome);
+    const NewInputIncome = parseFloat(InputIncome) || 0;
 
-    const TotalExpensesIncome = document.getElementById('total-expenses');
-    const previousIncome = TotalExpensesIncome.innerText;
-    const previousIncomeAmount = parseFloat(previousIncome);
-    const NewTotalIncome = previousIncomeAmount - NewInputIncome;
-    TotalExpensesIncome.innerText = NewTotalIncome; 
-   
-
-    
+    //Balance Total  
+    const TotalBalance = document.getElementById('Balance-total');
+    const NewBalance = NewInputIncome - NewTotalClothesCost;
+    TotalBalance.innerText = NewBalance;
 
 
-    
-  
- })
+    // Save Amount Element
+    const SaveAmountElement = document.getElementById('save-amount');
+    const SaveAmount = 0.2 * NewInputIncome;
+    SaveAmountElement.innerText = SaveAmount;
 
-
+    //Remaining Balance
+    const RemainingBalance = document.getElementById('remaining-Balance');
+    const TotalRemaininBalance = NewBalance - SaveAmount;
+    RemainingBalance.innerText = TotalRemaininBalance;
+});
 
 
 
